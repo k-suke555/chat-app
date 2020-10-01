@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :room_users #多対多のため中間テーブル記載
   has_many :rooms, through: :room_users
   has_many :messages
+
+  validates :name, presence: true #nameカラムが空ではDBに保存できない
 end
